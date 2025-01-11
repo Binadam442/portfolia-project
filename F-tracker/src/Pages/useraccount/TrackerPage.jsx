@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
-function Tracker() {
+function TrackerPage() {
+
+  const navigate = useNavigate();
+  const goTolandingPage = () => {
+    navigate('/landingPage');
+    //Navite back to the landingPage/TrackerPage
+  };
+
 // state for fitness data
 const [stepCount, setStepCount] = useState(0);
 const [caloriesBurned, setCaloriesBurned] = useState(0);
@@ -48,4 +56,4 @@ return (
 );
 };
 
-export default Tracker;
+export default TrackerPage;
