@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function RegisterPage() {
+function RegisterPage({ switchToLogin }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, SetConfirmPassword] = useState("");
@@ -13,17 +13,20 @@ function RegisterPage() {
         <div className="form container">
             <h2>Register</h2>
             <form onSubmit={handleRegister}>
+            <div className="form-component">
             <input
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)} />
-
+            </div>
+            <div className="form-component">
             <input
             type="password"
             placeholder="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)} />
+            </div>
 
             <input
             type="password"
@@ -34,7 +37,8 @@ function RegisterPage() {
             <button type="submit">Register</button>
             </form>
             <p>
-                Already have an account <a href="/">log in here</a>
+                Already have an account?
+                <button onClick={switchToLogin}>Login</button>
             </p>
         
 

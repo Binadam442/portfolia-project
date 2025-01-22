@@ -7,16 +7,18 @@ import HomePage from './Pages/HomePage';
 import Layout from './component/Layout';
 import TrackerPage from './Pages/useraccount/TrackerPage';
 import AboutPage from './Pages/AboutPage';
-
+import { AuthProvider } from './component/AuthContext';
+import ProtectedRoute from './component/Protectedroute';
 function App() {
     return (
         <Layout>
             <Routes>
                 <Route path="/" element={<HomePage />} />
-                <Route path="/login" element={<LoginPage />} />
+                <Route path="/LoginPage" element={<LoginPage />} />
                 <Route path="/RegisterPage" element={<RegisterPage />} />
-                <Route path="/useraccount" element={<TrackerPage />} />
+                <Route path="/useraccount" element={<ProtectedRoute><TrackerPage /></ProtectedRoute>} />
                 <Route path='/about' element={<AboutPage/>}/>
+                <Route path='/TrackerPage' element={<TrackerPage />}/>
             </Routes>
         </Layout>
     )

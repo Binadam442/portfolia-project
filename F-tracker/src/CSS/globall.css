@@ -74,3 +74,12 @@ p {
     display: flex;
     justify-content: center;
 }
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-component {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

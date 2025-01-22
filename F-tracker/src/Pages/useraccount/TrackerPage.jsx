@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
 
 
 function TrackerPage() {
 
-  const navigate = useNavigate();
-  const goTolandingPage = () => {
-    navigate('/landingPage');
-    //Navite back to the landingPage/TrackerPage
-  };
+
 
 // state for fitness data
 const [stepCount, setStepCount] = useState(0);
@@ -23,10 +20,24 @@ const updateFitnessData = () => {
   setHeartRate(heartRate + 5); // increase heart rate by 5 bpm
 };
 
+  const handleLogin = () => {
+    axios
+      .post('http://localhost:5000/login', { username, password })
+      .then((response) => {
+        setMessage(response.data.message);
+      })
+      .catch((error) => {
+        setMessage(error.response?.data?.message || 'Something went wrong');
+      });
+};
+
 return (
+
   
   <div className="App">
     <header className="App-header">
+    
+  
       <h1>Fitness Tracker</h1>
     </header>
 
@@ -35,18 +46,18 @@ return (
         <h2>Step Count</h2>
         <p>{stepCount} steps</p>
       </div>
-
-      <div className="card">
+      
+       <div className="card">                                 
         <h2>Calories Burned</h2>
         <p>{caloriesBurned} kcal</p>
 
       </div>
 
       <div className="card">
-        <h2>Heart Rate</h2>
+        <h2>Heart Rate</h2>    
         <p>{heartRate} bpm</p>
       </div>
-
+      
       <button onClick={updateFitnessData}>Updae Data</button>
     </main>
 
