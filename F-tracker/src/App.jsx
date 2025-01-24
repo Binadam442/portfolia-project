@@ -18,7 +18,7 @@ function App() {
                 <Route path="/RegisterPage" element={<RegisterPage />} />
                 <Route path="/useraccount" element={<ProtectedRoute><TrackerPage /></ProtectedRoute>} />
                 <Route path='/about' element={<AboutPage/>}/>
-                <Route path='/TrackerPage' element={<TrackerPage />}/>
+                <Route path='/TrackerPage' element={<TrackerPage/>}/>
             </Routes>
         </Layout>
     )

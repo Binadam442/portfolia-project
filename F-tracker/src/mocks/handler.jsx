@@ -3,7 +3,7 @@ import { rest } from 'msw';
 
 export const handlers = [
   // Mock GET request to fetch users
-  rest.get('http://localhost:5000/users', (req, res, ctx) => {
+  rest.get('http://localhost:5173/users', (req, res, ctx) => {
     return res(
       ctx.status(200),
       ctx.json([
@@ -14,7 +14,7 @@ export const handlers = [
   }),
 
   // Mock POST request for login
-  rest.post('http://localhost:5000/login', (req, res, ctx) => {
+  rest.post('http://localhost:5173/login', (req, res, ctx) => {
     const { username, password } = req.body;
     const users = [
       { id: 1, username: 'sunusi_adam', password: 'password123' },

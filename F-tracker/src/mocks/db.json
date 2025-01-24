@@ -1,0 +1,101 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "user1@gmail.com",
+      "password": "password1",
+      "token": "token123"
+    },
+    {
+      "id": 2,
+      "username": "user2@yahoo.com",
+      "password": "password2",
+      "token": "token456"
+    },
+    {
+      "id": "0c11",
+      "username": "adam@gmail.com",
+      "password": "1234",
+      "name": "sa"
+    },
+    {
+      "id": "e53f",
+      "username": "adam@gmail.com",
+      "password": "1234",
+      "name": "sa"
+    },
+    {
+      "id": "0d00",
+      "username": "adam@gmail.com",
+      "password": "1234",
+      "name": "sa"
+    },
+    {
+      "id": "b03e",
+      "username": "adam@gmail.com",
+      "password": "1234",
+      "name": "sa"
+    },
+    {
+      "id": "ad62",
+      "username": "adam@gmail.com",
+      "password": "1234",
+      "name": "sa"
+    },
+    {
+      "id": "4dd3",
+      "username": "adam@gmail.com",
+      "password": "1234",
+      "name": "sa"
+    },
+    {
+      "id": "996a",
+      "username": "adam@gmail.com",
+      "password": "1234",
+      "name": "sa"
+    },
+    {
+      "id": "73ed",
+      "username": "adam@gmail.com",
+      "password": "1234",
+      "name": "sa"
+    },
+    {
+      "id": "d77b",
+      "username": "adam@gmail.com",
+      "password": "1234",
+      "name": "sa"
+    },
+    {
+      "id": "b0e1",
+      "username": "adam@gmail.com",
+      "password": "1234",
+      "name": "sa"
+    },
+    {
+      "id": "4587",
+      "username": "adam@gmail.com",
+      "password": "1234",
+      "name": "sa"
+    }
+  ],
+  "tokens": [],
+  "fitnessData": [
+    {
+      "id": 1,
+      "userId": 1,
+      "date": "2025-01-21",
+      "steps": 10000,
+      "caloriesBurned": 500,
+      "workout": "Running"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "date": "2025-01-21",
+      "steps": 8000,
+      "caloriesBurned": 400,
+      "workout": "Cycling"
+    }
+  ]
+}

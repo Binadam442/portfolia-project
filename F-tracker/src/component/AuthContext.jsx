@@ -12,19 +12,19 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const navigate = useNavigate()
 
-    const login = (userData) => {
+    const createSession = (userData) => {
         setUser(userData);
-      
 
-};
 
-    const logout = () => {
+    };
+
+    const endSession = () => {
         setUser(null);
     };
 
-return (
-    <AuthContext.Provider value={{ user, login, logout }}>
-        {children}
-    </AuthContext.Provider>
-);
+    return (
+        <AuthContext.Provider value={{ user, createSession, endSession }}>
+            {children}
+        </AuthContext.Provider>
+    );
 };

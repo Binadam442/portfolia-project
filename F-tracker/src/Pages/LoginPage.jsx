@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../component/AuthContext";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import AuthService from "../mocks/AuthService";
 
 
 
@@ -11,19 +13,26 @@ function LoginPage({ switchToRegister }) {
 
     const navigate = useNavigate();
 
-    const { login } = useAuth();
+    const { createSession } = useAuth();
 
 
-    const handleLogin = (event) => {
+    const handleLogin =async (event) => {
         //to validate credendial
         event.preventDefault()
         //check user in DB
-        const userData = { username:email };
-        login(userData);
-        navigate('/TrackerPage');
 
-
+        const user = await AuthService.login(email, password);
+        console.log(user)
+        if (user) {
+           
+            createSession(user);
+           
+            navigate('/TrackerPage');
+        }else{
+            alert("Error login in")
+        }
     };
+
 
     return (
         <div className="form-container">
@@ -45,16 +54,16 @@ function LoginPage({ switchToRegister }) {
                 </div>
 
                 <div>
-                    <button type="submit">Login</button>
-                    <button type="button" onClick={()=>{
+                <button onClick={() => navigate("/TrackerPage")}>Login</button>
+                    <button type="button" onClick={() => {
                         setEmail("")
                         setPassword("")
-                    }}>Clear</button>
+                        }}>Clear</button>
                 </div>
             </form>
             <p>
                 Don't have an account?
-                <button onClick={switchToRegister}>Register</button>
+                <button onClick={() => navigate("/RegisterPage")}>Register</button>
             </p>
 
 
@@ -64,5 +73,5 @@ function LoginPage({ switchToRegister }) {
         </div>
     );
 
-};
+}
 export default LoginPage;

@@ -5,11 +5,16 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import Layout from './component/Layout';
 import { AuthProvider } from './component/AuthContext';
-import { worker } from './mocks/browser';
+
+// Start the mock worker only in development mode
+//if (process.env.NODE_ENV === "development") {
+  //import("/mocks/browser")
+    //.then(({ worker }) => worker.start())
+    //.catch((error) => console.error("Failed to start the mock worker:", error));
+//}
 
 
-//Start the mock service worker
-worker.start().then(() => {
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -23,5 +28,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
   </React.StrictMode>
 );
-});
+
+
 
